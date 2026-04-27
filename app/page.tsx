@@ -30,7 +30,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="rounded-full bg-[#d6b76a] px-5 py-2 text-sm font-semibold text-[#041f1a] hover:bg-[#e6c87a]"
             >
-              Staff Login
+              Staff Portal
             </a>
           </nav>
 
