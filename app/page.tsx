@@ -35,7 +35,7 @@ export default function Home() {
           </nav>
 
           <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 md:grid-cols-2 md:py-32">
-            <div>
+            <div className="fade-up">
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#d6b76a]">
                 Advocate • Passionate • Inspire • Consistency
               </p>
@@ -66,12 +66,12 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/15 bg-white/10 p-8 shadow-2xl backdrop-blur">
-            <img
-  src="/images/mek-tumul.jpg"
-  alt="Mek Tumul"
-  className="h-64 w-full rounded-2xl object-contain bg-[#f6f1e7] mb-6"
-/>
+            <div className="fade-up rounded-3xl border border-white/15 bg-white/10 p-8 shadow-2xl backdrop-blur">
+              <img
+                src="/images/mek-tumul.jpg"
+                alt="Mek Tumul"
+                className="mb-6 h-64 w-full rounded-2xl bg-[#f6f1e7] object-contain"
+              />
               <h3 className="text-2xl font-bold text-[#d6b76a]">Tumul Legal Office</h3>
               <div className="mt-6 space-y-4 text-slate-200">
                 <p><strong>Phone:</strong> +675 78993998</p>
@@ -88,7 +88,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-7xl px-6 py-20">
+      <section id="about" className="fade-up mx-auto max-w-7xl px-6 py-20">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#0b5a45]">
@@ -116,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="practice" className="bg-[#041f1a] py-20 text-white">
+      <section id="practice" className="fade-up bg-[#041f1a] py-20 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#d6b76a]">
             Practice Areas
@@ -151,7 +151,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
+      <section className="fade-up mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="rounded-3xl bg-white p-8 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <img
@@ -194,7 +194,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f6f1e7] py-20">
+      <section className="fade-up bg-[#f6f1e7] py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#0b5a45]">
             Why Choose Us
@@ -228,7 +228,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="team" className="bg-white py-20">
+      <section id="team" className="fade-up bg-white py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#0b5a45]">
             The Team
@@ -240,11 +240,11 @@ export default function Home() {
 
           <div className="mt-10 grid gap-8 md:grid-cols-2">
             <div className="rounded-3xl border border-slate-200 bg-[#f6f1e7] p-6 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-            <img
-  src="/images/mek-tumul.jpg"
-  alt="Mek Tumul"
-  className="h-72 w-full rounded-2xl object-contain bg-[#f6f1e7] mb-6"
-/>
+              <img
+                src="/images/mek-tumul.jpg"
+                alt="Mek Tumul"
+                className="mb-6 h-72 w-full rounded-2xl bg-[#f6f1e7] object-contain"
+              />
               <h3 className="text-2xl font-bold text-[#063b2f]">Mek Tumul</h3>
               <p className="mt-1 font-semibold text-[#8a6a2f]">Principal</p>
 
@@ -260,10 +260,11 @@ export default function Home() {
             </div>
 
             <div className="rounded-3xl border border-slate-200 bg-[#f6f1e7] p-6 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-            <img
-  src="/images/moses-liu.jpg"
-  alt="Moses Liu"className="h-72 w-full rounded-2xl object-contain bg-[#eae5dc] mb-6"
-/>
+              <img
+                src="/images/moses-liu.jpg"
+                alt="Moses Liu"
+                className="mb-6 h-72 w-full rounded-2xl bg-[#eae5dc] object-contain"
+              />
               <h3 className="text-2xl font-bold text-[#063b2f]">Moses H Liu</h3>
               <p className="mt-1 font-semibold text-[#8a6a2f]">Associate</p>
 
@@ -281,7 +282,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="bg-[#063b2f] py-20 text-white">
+      <section id="contact" className="fade-up bg-[#063b2f] py-20 text-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#d6b76a]">
