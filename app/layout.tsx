@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tumul Legal - Law Firm Papua New Guinea",
+  title: "Tumul Legal",
   description:
     "Professional legal services in Papua New Guinea. Case management, legal advice, and client support by Tumul Legal.",
   keywords: ["Tumul Legal", "Lawyer PNG", "Legal Services Papua New Guinea"],
