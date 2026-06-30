@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 
 const practiceAreas = [
   {
@@ -131,8 +131,49 @@ const practiceAreas = [
   },
 ];
 
+const stats = [
+  { value: "10+", label: "Years Legal Experience" },
+  { value: "2022", label: "Firm Established" },
+  { value: "12", label: "Practice Areas" },
+  { value: "PNG", label: "Court & Advisory Services" },
+];
+
+const whyChooseUs = [
+  "Experienced legal representation in PNG courts",
+  "Practical and cost-effective legal solutions",
+  "Client-focused advice for individuals and organisations",
+  "Strong background in litigation, commercial law and conveyancing",
+];
+
 export default function Home() {
   const [openPractice, setOpenPractice] = useState<string | null>(practiceAreas[0].title);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const updateFormField = (field: keyof typeof formData, value: string) => {
+    setFormData((current) => ({ ...current, [field]: value }));
+  };
+
+  const handleConsultationSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const emailSubject = formData.subject || "Website Consultation Request";
+    const emailBody = `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}`;
+
+    window.location.href = `mailto:mek@tumullegal.com?cc=mosesliu@tumullegal.com&subject=${encodeURIComponent(
+      emailSubject
+    )}&body=${encodeURIComponent(emailBody)}`;
+  };
 
   return (
     <main className="min-h-screen bg-[#f6f1e7] text-[#081f1a]">
@@ -251,26 +292,44 @@ export default function Home() {
         </div>
       </section>
 
+
       <section className="fade-up bg-white py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#0b5a45]">
-              Our Mission
-            </p>
-            <h2 className="mt-3 text-3xl font-bold md:text-5xl">
-              Quality legal service at a reasonable rate.
-            </h2>
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-10 md:grid-cols-2">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#0b5a45]">
+                Our Mission
+              </p>
+              <h2 className="mt-3 text-3xl font-bold md:text-5xl">
+                Quality legal services with practical solutions.
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-slate-700">
+                Tumul Legal is committed to providing high-quality legal services at a reasonable rate.
+                The firm focuses on practical advice, informed decision-making and innovative solutions
+                to complex legal problems.
+              </p>
+            </div>
+
+            <div className="rounded-3xl bg-[#f6f1e7] p-8 shadow-xl">
+              <h3 className="text-2xl font-bold text-[#063b2f]">Why Choose Tumul Legal</h3>
+              <div className="mt-6 space-y-4">
+                {whyChooseUs.map((item) => (
+                  <div key={item} className="flex gap-3 rounded-2xl bg-white p-4 shadow-sm">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#d6b76a] text-sm font-bold text-[#041f1a]">✓</span>
+                    <p className="font-medium text-slate-700">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="rounded-3xl bg-[#f6f1e7] p-8 shadow-xl">
-            <p className="text-lg leading-8 text-slate-700">
-              Our mission is to provide clients with high quality legal services at a
-              reasonable rate. We offer practical solutions and quality advice so our
-              clients can make informed decisions.
-            </p>
-            <p className="mt-4 text-lg leading-8 text-slate-700">
-              We are committed to excellence and to finding innovative solutions to
-              complex legal problems faced by our clients.
-            </p>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="rounded-3xl bg-[#041f1a] p-6 text-center text-white shadow-xl">
+                <p className="text-4xl font-bold text-[#d6b76a]">{stat.value}</p>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-slate-200">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -412,40 +471,127 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="fade-up bg-[#f6f1e7] py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#0b5a45]">
+            Location
+          </p>
+          <h2 className="mt-3 text-3xl font-bold md:text-5xl">
+            Find Our Office
+          </h2>
+          <div className="mt-8 overflow-hidden rounded-3xl shadow-2xl">
+            <iframe
+              title="Tumul Legal Office Location"
+              src="https://www.google.com/maps?q=Waigani%20Haus%20Mokoraha%20Road%20Waigani%20NCD%20Papua%20New%20Guinea&output=embed"
+              className="h-[420px] w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="fade-up bg-[#063b2f] py-20 text-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#d6b76a]">
               Contact
             </p>
             <h2 className="mt-3 text-3xl font-bold md:text-5xl">
-              Speak with Tumul Legal
+              Request a Consultation
             </h2>
-            <p className="mt-5 text-slate-200">
-              For legal enquiries, consultations or follow-ups, contact the office
-              using the details provided.
+            <p className="mt-5 leading-8 text-slate-200">
+              For legal enquiries, consultations or follow-ups, send a message using the form
+              or contact the office directly.
             </p>
+
+            <div className="mt-8 rounded-3xl bg-[#f6f1e7] p-8 text-[#081f1a] shadow-xl">
+              <p><strong>Telephone:</strong> +675 78993998</p>
+              <p className="mt-3"><strong>Email:</strong> mek@tumullegal.com</p>
+              <p className="mt-3"><strong>Email:</strong> mosesliu@tumullegal.com</p>
+              <p className="mt-3"><strong>Postal:</strong> Tumul Legal, PO Box 5856, Boroko, NCD</p>
+              <p className="mt-3">
+                <strong>Address:</strong> Level 2, Suite 3, Waigani Haus, Section 31,
+                Allotment 5, Mokoraha Road, Waigani, National Capital District
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="mailto:mek@tumullegal.com"
+                  className="rounded-full bg-[#d6b76a] px-6 py-3 font-semibold text-[#041f1a] hover:bg-[#e6c87a]"
+                >
+                  Email Tumul Legal
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="rounded-3xl bg-[#f6f1e7] p-8 text-[#081f1a] shadow-xl">
-            <p><strong>Telephone:</strong> +675 78993998</p>
-            <p className="mt-3"><strong>Email:</strong> mek@tumullegal.com</p>
-            <p className="mt-3"><strong>Email:</strong> mosesliu@tumullegal.com</p>
-            <p className="mt-3"><strong>Postal:</strong> Tumul Legal, PO Box 5856, Boroko, NCD</p>
-            <p className="mt-3">
-              <strong>Address:</strong> Level 2, Suite 3, Waigani Haus, Section 31,
-              Allotment 5, Mokoraha Road, Waigani, National Capital District
-            </p>
-
-            <a
-              href="mailto:mek@tumullegal.com"
-              className="mt-6 inline-block rounded-full bg-[#d6b76a] px-6 py-3 font-semibold text-[#041f1a] hover:bg-[#e6c87a]"
-            >
-              Email Tumul Legal
-            </a>
+            <h3 className="text-2xl font-bold text-[#063b2f]">Send an Enquiry</h3>
+            <form onSubmit={handleConsultationSubmit} className="mt-6 space-y-4">
+              <input
+                required
+                type="text"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={(event) => updateFormField("name", event.target.value)}
+                className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-[#d6b76a]"
+              />
+              <input
+                required
+                type="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={(event) => updateFormField("email", event.target.value)}
+                className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-[#d6b76a]"
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={(event) => updateFormField("phone", event.target.value)}
+                className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-[#d6b76a]"
+              />
+              <input
+                type="text"
+                placeholder="Subject / Legal Matter"
+                value={formData.subject}
+                onChange={(event) => updateFormField("subject", event.target.value)}
+                className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-[#d6b76a]"
+              />
+              <textarea
+                required
+                placeholder="Briefly describe your enquiry"
+                rows={5}
+                value={formData.message}
+                onChange={(event) => updateFormField("message", event.target.value)}
+                className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-[#d6b76a]"
+              />
+              <button
+                type="submit"
+                className="w-full rounded-full bg-[#d6b76a] px-6 py-3 font-bold text-[#041f1a] hover:bg-[#e6c87a]"
+              >
+                Request Consultation
+              </button>
+              <p className="text-sm leading-6 text-slate-600">
+                This form opens your email app with the enquiry details ready to send to Tumul Legal.
+              </p>
+            </form>
           </div>
         </div>
       </section>
+
+
+
+      <a
+        href="https://wa.me/67578993998?text=Hello%20Tumul%20Legal,%20I%20would%20like%20to%20make%20a%20legal%20enquiry."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 rounded-full bg-[#25D366] px-5 py-4 font-bold text-white shadow-2xl transition hover:scale-105"
+        aria-label="Chat with Tumul Legal on WhatsApp"
+      >
+        WhatsApp Us
+      </a>
 
       <footer className="bg-[#041f1a] px-6 py-8 text-center text-sm text-slate-400">
         © {new Date().getFullYear()} Tumul Legal. All Rights Reserved.
