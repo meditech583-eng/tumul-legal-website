@@ -184,7 +184,7 @@ ${formData.message}`;
         <div className="absolute inset-0 bg-gradient-to-b from-[#041f1a]/90 via-[#041f1a]/80 to-[#041f1a]/95" />
 
         <div className="relative z-10">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+          <nav className="sticky top-0 z-50 mx-auto flex max-w-7xl items-center justify-between rounded-b-3xl border-b border-white/10 bg-[#041f1a]/80 px-6 py-5 shadow-xl backdrop-blur-md">
             <div>
               <img
                 src="/images/tumul-logo.png"
@@ -197,21 +197,30 @@ ${formData.message}`;
               <a href="#about" className="hover:text-[#d6b76a]">About</a>
               <a href="#practice" className="hover:text-[#d6b76a]">Practice Areas</a>
               <a href="#team" className="hover:text-[#d6b76a]">Team</a>
+              <a href="#location" className="hover:text-[#d6b76a]">Location</a>
               <a href="#contact" className="hover:text-[#d6b76a]">Contact</a>
             </div>
 
-            <a
-              href="https://tumul-legal-system-v1.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-[#d6b76a] px-5 py-2 text-sm font-semibold text-[#041f1a] hover:bg-[#e6c87a]"
-            >
-              Staff Portal
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href="#contact"
+                className="hidden rounded-full border border-white/30 px-4 py-2 text-sm font-semibold text-white hover:bg-white hover:text-[#041f1a] sm:inline-block"
+              >
+                Consultation
+              </a>
+              <a
+                href="https://tumul-legal-system-v1.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-[#d6b76a] px-5 py-2 text-sm font-semibold text-[#041f1a] hover:bg-[#e6c87a]"
+              >
+                Staff Portal
+              </a>
+            </div>
           </nav>
 
           <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 md:grid-cols-2 md:py-32">
-            <div className="fade-up">
+            <div className="fade-up motion-safe:animate-[fadeUp_0.8s_ease-out_both]">
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#d6b76a]">
                 Advocate • Passionate • Inspire • Consistency
               </p>
@@ -242,7 +251,7 @@ ${formData.message}`;
               </div>
             </div>
 
-            <div className="fade-up rounded-3xl border border-white/15 bg-white/10 p-8 shadow-2xl backdrop-blur">
+            <div className="fade-up motion-safe:animate-[fadeUp_0.8s_ease-out_both] rounded-3xl border border-white/15 bg-white/10 p-8 shadow-2xl backdrop-blur">
               <img
                 src="/images/mek-tumul.jpg"
                 alt="Mek Tumul"
@@ -264,7 +273,7 @@ ${formData.message}`;
         </div>
       </section>
 
-      <section id="about" className="fade-up mx-auto max-w-7xl px-6 py-20">
+      <section id="about" className="fade-up motion-safe:animate-[fadeUp_0.8s_ease-out_both] mx-auto max-w-7xl px-6 py-20">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#0b5a45]">
@@ -293,7 +302,7 @@ ${formData.message}`;
       </section>
 
 
-      <section className="fade-up bg-white py-20">
+      <section className="fade-up motion-safe:animate-[fadeUp_0.8s_ease-out_both] bg-white py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-10 md:grid-cols-2">
             <div>
@@ -334,7 +343,7 @@ ${formData.message}`;
         </div>
       </section>
 
-      <section id="practice" className="fade-up bg-[#041f1a] py-20 text-white">
+      <section id="practice" className="fade-up motion-safe:animate-[fadeUp_0.8s_ease-out_both] bg-[#041f1a] py-20 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#d6b76a]">
             Practice Areas
@@ -399,7 +408,7 @@ ${formData.message}`;
         </div>
       </section>
 
-      <section className="fade-up mx-auto max-w-7xl px-6 py-20">
+      <section className="fade-up motion-safe:animate-[fadeUp_0.8s_ease-out_both] mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="rounded-3xl bg-white p-8 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <img src="/images/justice-scales.jpg" alt="Justice scales" className="mb-6 h-48 w-full rounded-2xl object-cover" />
@@ -430,7 +439,7 @@ ${formData.message}`;
         </div>
       </section>
 
-      <section id="team" className="fade-up bg-white py-20">
+      <section id="team" className="fade-up motion-safe:animate-[fadeUp_0.8s_ease-out_both] bg-white py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#0b5a45]">
             The Team
@@ -471,7 +480,7 @@ ${formData.message}`;
         </div>
       </section>
 
-      <section className="fade-up bg-[#f6f1e7] py-20">
+      <section id="location" className="fade-up motion-safe:animate-[fadeUp_0.8s_ease-out_both] bg-[#f6f1e7] py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#0b5a45]">
             Location
@@ -511,7 +520,7 @@ ${formData.message}`;
         </div>
       </section>
 
-      <section id="contact" className="fade-up bg-[#063b2f] py-20 text-white">
+      <section id="contact" className="fade-up motion-safe:animate-[fadeUp_0.8s_ease-out_both] bg-[#063b2f] py-20 text-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#d6b76a]">
@@ -603,15 +612,59 @@ ${formData.message}`;
 
 
 
+      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#041f1a]/95 p-3 shadow-2xl backdrop-blur md:hidden">
+        <div className="mx-auto flex max-w-md gap-3">
+          <a
+            href="tel:+67578993998"
+            className="flex-1 rounded-full bg-white px-4 py-3 text-center text-sm font-bold text-[#041f1a]"
+          >
+            Call
+          </a>
+          <a
+            href="#contact"
+            className="flex-1 rounded-full bg-[#d6b76a] px-4 py-3 text-center text-sm font-bold text-[#041f1a]"
+          >
+            Enquire
+          </a>
+        </div>
+      </div>
+
       <a
         href="https://wa.me/67578993998?text=Hello%20Tumul%20Legal,%20I%20would%20like%20to%20make%20a%20legal%20enquiry."
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 rounded-full bg-[#25D366] px-5 py-4 font-bold text-white shadow-2xl transition hover:scale-105"
+        className="fixed bottom-24 right-6 z-50 rounded-full bg-[#25D366] px-5 py-4 font-bold text-white shadow-2xl transition hover:scale-105 md:bottom-6"
         aria-label="Chat with Tumul Legal on WhatsApp"
       >
         WhatsApp Us
       </a>
+
+
+      <style jsx global>{`
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes heroZoom {
+          from {
+            transform: scale(1);
+          }
+          to {
+            transform: scale(1.08);
+          }
+        }
+
+        html {
+          scroll-behavior: smooth;
+        }
+      `}</style>
 
       <footer className="bg-[#041f1a] px-6 py-8 text-center text-sm text-slate-400">
         © {new Date().getFullYear()} Tumul Legal. All Rights Reserved.
