@@ -479,13 +479,33 @@ ${formData.message}`;
           <h2 className="mt-3 text-3xl font-bold md:text-5xl">
             Find Our Office
           </h2>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
+            Tumul Legal is conveniently located at Level 2, Suite 3, Waigani Haus,
+            Section 31, Allotment 5, Mokoraha Road, Waigani, National Capital District.
+          </p>
           <div className="mt-8 overflow-hidden rounded-3xl shadow-2xl">
             <iframe
               title="Tumul Legal Office Location"
-              src="https://www.google.com/maps?q=Waigani%20Haus%20Mokoraha%20Road%20Waigani%20NCD%20Papua%20New%20Guinea&output=embed"
+              src="https://www.google.com/maps?q=Waigani+Haus+Mokoraha+Road+Waigani+Port+Moresby+Papua+New+Guinea&output=embed"
               className="h-[420px] w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <div className="mt-12 grid items-center gap-10 md:grid-cols-2">
+            <div>
+              <h3 className="text-2xl font-bold text-[#063b2f]">Our Office Building</h3>
+              <p className="mt-4 text-lg leading-8 text-slate-700">
+                Visitors can easily identify our office at Waigani Haus along Mokoraha Road, Waigani. Our office is located on Level 2, Suite 3.
+              </p>
+              <p className="mt-4 text-slate-600">
+                Address: Level 2, Suite 3, Waigani Haus, Section 31, Allotment 5, Mokoraha Road, Waigani, National Capital District.
+              </p>
+            </div>
+            <img
+              src="/images/waigani-office.jpg"
+              alt="Tumul Legal Office Building"
+              className="h-[350px] w-full rounded-3xl object-cover shadow-2xl"
             />
           </div>
         </div>
